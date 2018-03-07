@@ -7,11 +7,7 @@ Package license: GPL-3
 
 Feedstock license: BSD 3-Clause
 
-Summary: Helpers for reordering factor levels (including moving specified levels to front,
-ordering by first appearance, reversing, and randomly shuffling), and tools for
-modifying factor levels (including collapsing rare levels into other, 'anonymising',
-and manually 'recoding').
-
+Summary: Helpers for reordering factor levels (including moving specified levels to front, ordering by first appearance, reversing, and randomly shuffling), and tools for modifying factor levels (including collapsing rare levels into other, 'anonymising', and manually 'recoding').
 
 
 
@@ -70,6 +66,7 @@ To manage the continuous integration and simplify feedstock maintenance
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
+For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
