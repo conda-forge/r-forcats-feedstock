@@ -1,5 +1,4 @@
 {% set version = '0.3.0' %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: forcats_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/forcats_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/forcats/forcats_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/forcats_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/forcats/forcats_{{ version }}.tar.gz
   sha256: 95814610ec18b8a8830eba63751954387f9d21400d6ab40394ed0ff22c0cb657
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,11 +23,12 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-magrittr
     - r-rlang
     - r-tibble
-
   run:
     - r-base
     - r-magrittr
@@ -36,7 +37,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('forcats')"  # [not win]
+    - $R -e "library('forcats')"           # [not win]
     - "\"%R%\" -e \"library('forcats')\""  # [win]
 
 about:
@@ -52,8 +53,9 @@ about:
 
 extra:
   recipe-maintainers:
-    - cbrueffer
     - johanneskoester
     - bgruening
     - daler
     - jdblischak
+    - cbrueffer
+    - dbast
