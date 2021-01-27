@@ -1,4 +1,4 @@
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/forcats_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/forcats/forcats_{{ version }}.tar.gz
-  sha256: 8f960e789333ec597ddf2d653a64e330f03b86f465e9b71f6779f227355d90c4
+  sha256: c4fb96e874e2bedaa8a1aa32ea22abdee7906d93b5c5c7b42c0894c0c5b6a289
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -44,8 +44,7 @@ test:
 about:
   home: http://forcats.tidyverse.org, https://github.com/tidyverse/forcats
   license: GPL-3
-  summary: Helpers for reordering factor levels (including moving specified levels to front, ordering by first appearance, reversing, and randomly shuffling), and
-    tools for modifying factor levels (including collapsing rare levels into other, 'anonymising', and manually 'recoding').
+  summary: Helpers for reordering factor levels (including moving specified levels to front, ordering by first appearance, reversing, and randomly shuffling), and tools for modifying factor levels (including collapsing rare levels into other, 'anonymising', and manually 'recoding').
   license_family: GPL3
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 

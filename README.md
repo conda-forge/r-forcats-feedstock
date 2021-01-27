@@ -5,11 +5,9 @@ Home: http://forcats.tidyverse.org, https://github.com/tidyverse/forcats
 
 Package license: GPL-3
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-forcats-feedstock/blob/master/LICENSE.txt)
 
 Summary: Helpers for reordering factor levels (including moving specified levels to front, ordering by first appearance, reversing, and randomly shuffling), and tools for modifying factor levels (including collapsing rare levels into other, 'anonymising', and manually 'recoding').
-
-
 
 Current build status
 ====================
